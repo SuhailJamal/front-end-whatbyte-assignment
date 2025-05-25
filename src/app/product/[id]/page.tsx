@@ -2,11 +2,12 @@
 import products from "@/data";
 import React, { useState } from "react";
 import { useCartStore } from "@/store/cartStore";
-export default function ProductDetailPage({
-  params,
-}: {
-  params: { id: string };
-}) {
+type pageProps = {
+  params: {
+    id: string;
+  };
+};
+export default function ProductDetailPage({ params }: pageProps) {
   const [quantity, setQuantity] = useState(1);
   const { id } = React.use(params);
   const addItem = useCartStore((state) => state.addToCart);
