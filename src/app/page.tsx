@@ -3,9 +3,21 @@ import ProductCard from "@/components/ProductCard";
 import Sidebar from "@/components/Sidebar";
 import products from "@/data";
 import { useState } from "react";
+import { useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 export default function Home() {
-  const [category, setCategory] = useState<string>("all");
+  const searchParams = useSearchParams();
+  const category = searchParams.get("category");
+  const price = searchParams.get("price");
+  const [selectedCategory, setSelectedCategory] = useState<string>("all");
   const [filterPrice, setFilterPrice] = useState<number>(1000);
+  useEffect(() => {
+    if (typeof category === "string") setSelectedCategory(category);
+    if (typeof price === "string") {
+      const priceRange = price.split("-"); // e.g., "0-1000"
+      if (priceRange[1]) setFilterPrice(Number(priceRange[1]));
+    }
+  }, [category, price]);
   const filteredProducts = products.filter((val) => {
     const categoryMatch = category === "all" || val.category === category;
     const priceMatch = val.price <= filterPrice;
@@ -15,8 +27,8 @@ export default function Home() {
   return (
     <div className="bg-slate-100 flex flex-row pt-10 pb-5">
       <Sidebar
-        category={category}
-        setCategory={setCategory}
+        category={selectedCategory}
+        setCategory={setSelectedCategory}
         filterPrice={filterPrice}
         setFilterPrice={setFilterPrice}
       />
