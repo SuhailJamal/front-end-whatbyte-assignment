@@ -9,7 +9,7 @@ type pageProps = {
 };
 export default function ProductDetailPage({ params }: any) {
   const [quantity, setQuantity] = useState(1);
-  const { id } = React.use(params);
+  const { id }: any = React.use(params);
   const addItem = useCartStore((state) => state.addToCart);
 
   const product = products.find((p) => p.id === Number(id));
