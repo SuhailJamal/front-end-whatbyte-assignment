@@ -1,7 +1,7 @@
 export default function Sidebar() {
   return (
     <div className="flex flex-col">
-      <div className="bg-blue-900 w-[250px] rounded-lg p-4 mb-5 text-white ml-5">
+      <div className="bg-blue-900 hidden md:block md:w-[250px] rounded-lg p-4 mb-5 text-white ml-5">
         <h2 className="font-semibold mb-4">Filters</h2>
         <div>
           <h3 className="font-medium mb-2">Category</h3>
@@ -33,7 +33,7 @@ export default function Sidebar() {
           <p>1000</p>
         </div>
       </div>{" "}
-      <div className="bg-white w-[250px] rounded-lg p-4 text-black ml-5">
+      <div className="bg-white hidden md:block md:w-[250px] rounded-lg p-4 text-black ml-5">
         <h2 className="font-semibold mb-4">Filters</h2>
         <div>
           <h3 className="font-medium mb-2">Category</h3>
