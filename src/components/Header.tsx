@@ -24,10 +24,12 @@ const Header = () => {
             />
           </div>
 
-          <div className="flex rounded-md bg-blue-950 px-3 md:px-5 py-2 text-white items-center space-x-4">
-            <ShoppingCart />
-            <p className="hidden md:block">Cart</p>
-          </div>
+          <Link href="/cart">
+            <div className="flex rounded-md bg-blue-950 px-3 md:px-5 py-3 text-white items-center space-x-4">
+              <ShoppingCart />
+              <p className="hidden md:block">Cart</p>
+            </div>
+          </Link>
         </div>
       </nav>
     </>
