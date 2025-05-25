@@ -3,7 +3,7 @@ import { ShoppingCart, Search } from "lucide-react";
 const Header = () => {
   return (
     <>
-      <nav className="flex justify-between items-center bg-blue-900 text-white p-4 px-14">
+      <nav className="flex justify-between items-center bg-blue-900 mb-10 text-white p-4 px-14">
         <div className="font-bold text-lg md:text-4xl">Logo</div>
         <div className="flex justify-center gap-10">
           <div className="flex items-center border border-white rounded-md bg-blue-900 h-12 px-3 w-[400px]">

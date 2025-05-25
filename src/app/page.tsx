@@ -1,8 +1,9 @@
+import Sidebar from "@/components/Sidebar";
 export default function Home() {
   return (
-    <>
-      <h1>this is home page</h1>
-      
-    </>
+    <div className="bg-slate-100 flex flex-row">
+      <Sidebar />
+      <div>Hello World</div>
+    </div>
   );
 }
