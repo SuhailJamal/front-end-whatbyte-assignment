@@ -7,7 +7,7 @@ type pageProps = {
     id: string;
   };
 };
-export default function ProductDetailPage({ params }: pageProps) {
+export default function ProductDetailPage({ params }: any) {
   const [quantity, setQuantity] = useState(1);
   const { id } = React.use(params);
   const addItem = useCartStore((state) => state.addToCart);
